@@ -1,0 +1,36 @@
+{
+   "settings":{
+      "number_of_shards":1
+   },
+   "mappings":{
+      "lastfm":{
+         "properties":{
+            "url":{
+               "type":"keyword"
+            },
+            "country":{
+               "type":"keyword"
+            },
+            "image":{
+               "type":"keyword"
+            },
+            "genre":{
+               "type":"text",
+               "fields":{
+                  "keyword":{
+                     "type":"keyword"
+                  }
+               }
+            },
+            "name":{
+               "type":"text",
+               "fields":{
+                  "keyword":{
+                     "type":"keyword"
+                  }
+               }
+            }
+         }
+      }
+   }
+}

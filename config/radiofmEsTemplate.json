@@ -1,0 +1,31 @@
+{
+   "settings":{
+      "number_of_shards":1
+   },
+   "mappings":{
+      "radiofm":{
+         "properties":{
+            "playDate":{
+               "type":"date",
+               "format":"epoch_second"
+            },
+            "song":{
+               "type":"text",
+               "fields":{
+                  "keyword":{
+                     "type":"keyword"
+                  }
+               }
+            },
+            "artist":{
+               "type":"text",
+               "fields":{
+                  "keyword":{
+                     "type":"keyword"
+                  }
+               }
+            }
+         }
+      }
+   }
+}
