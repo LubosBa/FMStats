@@ -4,14 +4,16 @@
 from FMStats import fetcher
 import json
 import urllib2
+from FMStats import confManager as cm
 
 class LastFMenricher(fetcher.FmFetcher):
     """
     LastFM API credentials
     """
-    lastFMbaseUrl = "http://ws.audioscrobbler.com/2.0/"
-    apiKey = "0e3e23795845a7af026e066f0e1e62ae"
-    outputFormat = "json"
+    conf = cm.ConfManager()
+    lastFMbaseUrl = conf.lastFmUrl()
+    apiKey = conf.lastFmApiKey()
+    outputFormat = conf.lastFmOutput()
 
     """
     Builds up an API url for Artist info
