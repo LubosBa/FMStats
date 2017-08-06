@@ -30,3 +30,18 @@ class ConfManager(object):
 
     def radioMapping(self):
         return self.config.get("ElasticSearch", "radiofmEsMapping")
+
+    def lastFmUrl(self):
+        return self.config.get("LastFMAPI", "api_url")
+
+    def lastFmApiKey(self):
+        return self.config.get("LastFMAPI", "api_key")
+
+    def lastFmOutput(self):
+        return self.config.get("LastFMAPI", "output_format")
+
+    def redisAddres(self):
+        return self.config.get("Redis", "hostname")
+
+    def redisPort(self):
+        return self.config.get("Redis", "port")
