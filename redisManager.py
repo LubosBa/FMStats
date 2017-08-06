@@ -1,9 +1,10 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-
 import redis
+from FMStats import confManager as cm
 
-redInstance = redis.StrictRedis(host="172.17.0.8", port=6379, db=0)
+conf = cm.ConfManager()
+redInstance = redis.StrictRedis(host=conf.redisAddres(), port=conf.redisPort(), db=0)
 
 def redisPublishArtists(artistList):
     redInstance.ltrim("fmList", "-1", "0")
